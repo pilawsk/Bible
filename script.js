@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     populateBooks();
+    document.body.style.backgroundImage = "url('Backround.png')";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundAttachment = "fixed";
 });
 
 const bookMaxChaptersVerses = {
