@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Verse Viewer By Filip Pilawski :D</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="theme-toggle-container">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Cool Button">
+            <span class="theme-icon">Button o' Uselessness</span>
+        </button>
+    </div>
+
+    <div class="container">
+        <h1>Bible Verse Viewer</h1>
+        <h2>By pilawsk</h2>
+        <h3>https://github.com/pilawsk/ScriptProjects</h3>
+        
+        <div class="select-group">
+            <div>
+                <label for="book">Book:</label>
+                <select id="book">
+                    {% for book in books %}
+                    <option value="{{ book }}">{{ book }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div>
+                <label for="chapter">Chapter:</label>
+                <select id="chapter"></select>
+            </div>
+            
+            <div>
+                <label for="verse">Verse:</label>
+                <select id="verse"></select>
+            </div>
+        </div>
+
+        <button onclick="fetchVerse()">Get Verse</button>
+
+        <div id="verse-display"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
